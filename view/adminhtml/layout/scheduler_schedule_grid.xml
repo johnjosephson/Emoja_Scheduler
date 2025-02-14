@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Emoja_Scheduler
+ *
+ * @category    Emoja
+ * @package     Emoja_Scheduler
+ * @copyright   Copyright (c) 2025 Emoja Consulting, Inc
+ * @author      johnjay@alumni.caltech.edu
+ */
+ -->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <update handle="scheduler_schedule_grid_block"/>
+    <container name="root" label="Root">
+        <block class="Emoja\Scheduler\Block\Adminhtml\Schedule" name="adminhtml.scheduler.schedule.grid.container"/>
+    </container>
+</layout>

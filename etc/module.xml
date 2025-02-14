@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Emoja_Scheduler
+ *
+ * @category    Emoja
+ * @package     Emoja_Scheduler
+ * @copyright   Copyright (c) 2025 Emoja Consulting, Inc
+ * @author      johnjay@alumni.caltech.edu
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+  <module name="Emoja_Scheduler" setup_version="1.0.0"/>
+</config>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Emoja_Scheduler
+ *
+ * @category    Emoja
+ * @package     Emoja_Scheduler
+ * @copyright   Copyright (c) 2025 Emoja Consulting, Inc
+ * @author      johnjay@alumni.caltech.edu
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Emoja_Scheduler::scheduler" title="Cron Schedule" sortOrder="99" module="Emoja_Scheduler"
+             parent="Magento_Backend::system_tools" action="scheduler/schedule" resource="Emoja_Scheduler::scheduler"/>
+        <add id="Emoja_Scheduler::job" title="Cron Jobs" sortOrder="101" module="Emoja_Scheduler"
+             parent="Magento_Backend::system_tools" action="scheduler/job" resource="Emoja_Scheduler::job"/>
+    </menu>
+</config>

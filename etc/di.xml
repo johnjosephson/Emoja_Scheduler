@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Emoja_Scheduler
+ * @copyright   Copyright (c) 2021 Emoja Consulting, Inc
+ * @author      johnjay@alumni.caltech.edu
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="emoja_scheduler_run" xsi:type="object">Emoja\Scheduler\Console\Command\RunJob</item>
+                <item name="emoja_scheduler_schedule" xsi:type="object">Emoja\Scheduler\Console\Command\ScheduleJob</item>
+                <item name="emoja_scheduler_listjobs" xsi:type="object">Emoja\Scheduler\Console\Command\ListJobs</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

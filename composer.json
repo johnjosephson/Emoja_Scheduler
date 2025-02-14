@@ -1,0 +1,27 @@
+{
+  "name": "emoja/module-scheduler",
+  "description": "N/A",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "John Josephson",
+      "email": "jjose@emoja.com",
+      "homepage": "http://www.emoja.com/"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Emoja\\Scheduler\\": ""
+    }
+  }
+}

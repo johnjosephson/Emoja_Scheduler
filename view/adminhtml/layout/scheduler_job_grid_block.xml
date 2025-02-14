@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Emoja_Scheduler
+ *
+ * @category    Emoja
+ * @package     Emoja_Scheduler
+ * @copyright   Copyright (c) 2025 Emoja Consulting, Inc
+ * @author      johnjay@alumni.caltech.edu
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="adminhtml.scheduler.job.grid.container">
+            <block class="Emoja\Scheduler\Block\Adminhtml\Job\Grid" name="adminhtml.block.scheduler.job.grid" as="grid">
+                <arguments>
+                    <argument name="id" xsi:type="string">emoja_scheduler_job_grid</argument>
+                    <argument name="dataSource" xsi:type="object">Emoja\Scheduler\Model\ResourceModel\Job\Collection</argument>
+                    <argument name="pager_visibility" xsi:type="string">0</argument>
+                </arguments>
+                <block class="Magento\Backend\Block\Widget\Grid\Massaction" name="adminhtml.cache.massaction" as="grid.massaction">
+                    <arguments>
+                        <argument name="massaction_id_field" xsi:type="string">job_code</argument>
+                        <argument name="form_field_name" xsi:type="string">job_codes</argument>
+                        <argument name="use_select_all" xsi:type="string">1</argument>
+                        <argument name="options" xsi:type="array">
+                            <item name="refresh" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Schedule Now</item>
+                                <item name="url" xsi:type="string">*/*/massSchedule</item>
+                            </item>
+                            <item name="run" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Run</item>
+                                <item name="url" xsi:type="string">*/*/massRun</item>
+                            </item>
+                        </argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" as="grid.columnSet" name="adminhtml.scheduler.job.grid.columnSet">
+                    <arguments>
+                        <argument name="rowUrl" xsi:type="null"/>
+                        <argument name="filter_visibility" xsi:type="string">0</argument>
+                    </arguments>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="job_code">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Job Code</argument>
+                            <argument name="type" xsi:type="string">text</argument>
+                            <argument name="id" xsi:type="string">job_code</argument>
+                            <argument name="index" xsi:type="string">job_code</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                         </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="group">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Group</argument>
+                            <argument name="type" xsi:type="string">text</argument>
+                            <argument name="id" xsi:type="string">group</argument>
+                            <argument name="index" xsi:type="string">group</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="full_method">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Method</argument>
+                            <argument name="type" xsi:type="string">text</argument>
+                            <argument name="id" xsi:type="string">full_method</argument>
+                            <argument name="index" xsi:type="string">full_method</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="config_path">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">config_path</argument>
+                            <argument name="type" xsi:type="string">text</argument>
+                            <argument name="id" xsi:type="string">config_path</argument>
+                            <argument name="index" xsi:type="string">config_path</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Schedule</argument>
+                            <argument name="type" xsi:type="string">text</argument>
+                            <argument name="id" xsi:type="string">schedule</argument>
+                            <argument name="index" xsi:type="string">schedule</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

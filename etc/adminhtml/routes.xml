@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Emoja_Scheduler
+ *
+ * @category    Emoja
+ * @package     Emoja_Scheduler
+ * @copyright   Copyright (c) 2025 Emoja Consulting, Inc
+ * @author      johnjay@alumni.caltech.edu
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+  <router id="admin">
+    <route id="scheduler" frontName="scheduler">
+      <module name="Emoja_Scheduler" before="Magento_Backend"/>
+    </route>
+  </router>
+</config>

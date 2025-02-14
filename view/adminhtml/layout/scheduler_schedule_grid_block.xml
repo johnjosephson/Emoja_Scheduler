@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Emoja_Scheduler
+ *
+ * @category    Emoja
+ * @package     Emoja_Scheduler
+ * @copyright   Copyright (c) 2025 Emoja Consulting, Inc
+ * @author      johnjay@alumni.caltech.edu
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="adminhtml.scheduler.schedule.grid.container">
+            <block class="Emoja\Scheduler\Block\Adminhtml\Schedule\Grid" name="adminhtml.block.scheduler.schedule.grid" as="grid">
+                <arguments>
+                    <argument name="id" xsi:type="string">emoja_scheduler_schedule_grid</argument>
+                    <argument name="dataSource" xsi:type="object">Magento\Cron\Model\ResourceModel\Schedule\Collection</argument>
+                    <argument name="default_sort" xsi:type="string">schedule_id</argument>
+                    <argument name="default_dir" xsi:type="string">DESC</argument>
+                    <argument name="use_ajax" xsi:type="boolean">true</argument>
+                    <argument name="save_parameters_in_session" xsi:type="string">1</argument>
+                    <argument name="grid_url" xsi:type="url" path="*/schedule/grid">
+                        <param name="_current">1</param>
+                    </argument>
+                </arguments>
+                <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" as="grid.columnSet" name="adminhtml.scheduler.schedule.grid.columnSet">
+                    <arguments>
+                        <argument name="rowUrl" xsi:type="null"/>
+                    </arguments>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule_schedule_id">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Schedule ID</argument>
+                            <argument name="type" xsi:type="string">number</argument>
+                            <argument name="id" xsi:type="string">schedule_id</argument>
+                            <argument name="index" xsi:type="string">schedule_id</argument>
+                            <argument name="column_css_class" xsi:type="string">col-id</argument>
+                            <argument name="header_css_class" xsi:type="string">col-id</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule_job_code">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Job Code</argument>
+                            <argument name="type" xsi:type="string">text</argument>
+                            <argument name="id" xsi:type="string">job_code</argument>
+                            <argument name="index" xsi:type="string">job_code</argument>
+                         </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule_status">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Status</argument>
+                            <argument name="type" xsi:type="string">options</argument>
+                            <argument name="id" xsi:type="string">status</argument>
+                            <argument name="index" xsi:type="string">status</argument>
+                            <argument name="options" xsi:type="options" model="Emoja\Scheduler\Model\Source\Status"/>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule_messages">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Messages</argument>
+                            <argument name="type" xsi:type="string">longtext</argument>
+                            <argument name="id" xsi:type="string">messages</argument>
+                            <argument name="index" xsi:type="string">messages</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule_created_at">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Created</argument>
+                            <argument name="type" xsi:type="string">datetime</argument>
+                            <argument name="id" xsi:type="string">created_at</argument>
+                            <argument name="index" xsi:type="string">created_at</argument>
+                            <argument name="format" xsi:type="string">3</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule_scheduled_at">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Scheduled</argument>
+                            <argument name="type" xsi:type="string">datetime</argument>
+                            <argument name="id" xsi:type="string">scheduled_at</argument>
+                            <argument name="format" xsi:type="string">3</argument>
+                            <argument name="index" xsi:type="string">scheduled_at</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule_executed_at">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Executed</argument>
+                            <argument name="type" xsi:type="string">datetime</argument>
+                            <argument name="id" xsi:type="string">executed_at</argument>
+                            <argument name="index" xsi:type="string">executed_at</argument>
+                            <argument name="format" xsi:type="string">3</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="schedule_finished_at">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Finished</argument>
+                            <argument name="type" xsi:type="string">datetime</argument>
+                            <argument name="id" xsi:type="string">finished_at</argument>
+                            <argument name="index" xsi:type="string">finished_at</argument>
+                            <argument name="format" xsi:type="string">3</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
